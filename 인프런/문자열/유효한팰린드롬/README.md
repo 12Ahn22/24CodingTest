@@ -1,8 +1,4 @@
-package 인프런.문자열.유효한팰린드롬;
-
-import java.util.Scanner;
-
-public class Main {
+```java
     public String solution(String input) {
         // 앞에서 읽으나 뒤에서 읽으나 같은 문자열 - 팰린드롬
         // 알파벳 이외의 문자를 무시한다.
@@ -21,21 +17,13 @@ public class Main {
 
         return str.toString().equals(reversedStr) ? "YES" : "NO";
     }
+```
+## StringBuilder의 reverse
+> StringBuilder의 reverse는 원본을 reverse한다!
 
-    public String solution2(String s) {
-        String answer = "NO";
-        // 정규표현식을 사용한 replaceAll
-        // 알파벳이 아닌 것들을 다 빈 문자로 replace 시키기
-        s = s.toUpperCase().replaceAll("[^A-Z]", "");
-        String tmp = new StringBuilder(s).reverse().toString();
-        if (s.equals(tmp)) answer = "YES";
-        return answer;
-    }
+원본을 reverse 시키기 때문에, str.reverse()와 str을 비교하니까 계속 같다고 출력되던 것이였다.
+따라서, 새로운 StringBuilder 객체를 만든 후, 그걸 reverse 한 후 그 결과와 비교해야한다.
 
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        Main T = new Main();
-        System.out.println(T.solution(in.nextLine()));
-    }
-}
+```java
+String reversedStr = new StringBuilder(str).reverse().toString();
+```
