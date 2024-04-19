@@ -25,6 +25,7 @@ public class Main {
         return result.entrySet().stream()
                 .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey)
+                // .map((v)-> v.getKey())
                 .orElse(null);
     }
 
