@@ -44,6 +44,8 @@ public class Main {
         for (int i = 0; i < k - 1; i++) {
             HM.put(arr[i], HM.getOrDefault(arr[i], 0) + 1);
         }
+
+
         int lt = 0;
         for (int rt = k - 1; rt < n; rt++) {
             HM.put(arr[rt], HM.getOrDefault(arr[rt], 0) + 1);
