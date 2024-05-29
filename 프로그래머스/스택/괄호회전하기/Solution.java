@@ -1,6 +1,5 @@
-package 코딩테스트합격자되기.스택.괄호회전하기;
+package 프로그래머스.스택.괄호회전하기;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
